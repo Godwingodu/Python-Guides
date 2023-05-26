@@ -1,0 +1,30 @@
+Encapsulation refers to a mechanism of restricting the direct access to some of our attributes in a class/pgm .
+
+It describes the idea of wrapping data and the methods that work on data within one unit (ex : Class). This puts restrictions 
+on accessing variables and methods directly and can prevent the accidental modification of data. To prevent accidental change,
+an object’s variable can only be changed by an object’s method. And to make this possible we use access modifiers such as protected (_),
+private (__) as prefix to the variables. 
+
+Ex :-
+
+If we set the price attribute in our item class as a private attribute =>
+    ------------------------------------------------
+   | self.price = price   as   self.__price = price |
+    ------------------------------------------------
+    Then we cannot access this price attribute or change it from instance level as,
+    obj = Item('name',price)
+    obj.price = new_price => this action will not be possible i.e cannot alter it directly
+    But if we set a new method that has access to this price for eg:- in our case we have a
+    method 'apply_discount' and this method has access to price as when we apply this method
+    on a instance and then print the price of that object then we will see the discounted price
+
+    obj = Item('name',price)
+    obj.apply_discount()
+    print(obj.price)
+    # o.p => price will be discounted price now
+
+    This feature of preventing direct access to some of our attributes in a class and can be modify only
+    using some methods associated with it is called encapuslation . This prevents accidental modification
+    of data and make it secure . And this is achieved using access modifiers in most cases .
+
+

@@ -1,0 +1,75 @@
+* Polymorphism refers to use of a single type entity (method, operator or object) to reperesent different types in different contexts . 
+* Polymorphism means simple ManyForms or simple ability of an entity to take different forms based on context .
+
+Ex :-
+name = "Jim" # str
+ print(len(name)) 
+
+some_list = ["some","name"] # list
+ print(len(some_list))
+
+That's polymorphism in action, here the len fn will print no.of chars when we print a string, but print no.of items in a list when we print list,
+A single function does know how to handle different kinds of objects as expected! This is also applicable in operators like we know the case of '+'.
+
+Polymorphism in python is implemented using Method Overloading and Method Overriding .
+Method Overloading - Same as operator Overloading , Same fn behaves different according to different context .
+Method Overriding - Methods with same name can be overided (inheritance case) and can be modified according to our use . 
+
+# Inheritance and Polymorphism Combined
+
+    class Item:
+    pay_rate = 0.8 # The pay rate after 20% discount
+    def __init__(self, name: str, price: float, quantity=0):
+
+        # Assign to self object
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+    
+    def apply_discount(self):
+        self.price = self.price * self.pay_rate
+    
+    # Inheriting it
+
+    class Keyboard(Item):
+    pay_rate = 0.7
+    def __init__(self, name: str, price: float, quantity=0):
+        super().__init__(
+            name, price, quantity
+        )
+    
+    class Phone(Item):
+    pay_rate = 0.5
+    def __init__(self, name: str, price: float, quantity=0):
+        super().__init__(
+            name, price, quantity
+        )
+
+    # Creating Instances
+
+    item0 = Phone("jscItem", 100, 1)
+    item1 = Keyboard("jscKeyboard", 1000, 3)
+    item2 = Phone("jscPhone", 500, 2)
+    
+    item0.apply_discount()
+    item1.apply_discount()
+    item2.apply_discount()
+
+    print(item0.price)
+    print(item1.price)
+    print(item2.price)
+
+Here , the price of the objects that we printed will based on pay_rate in their class, for item0 it will be based on pay_rate in Item class
+and so on . Here in Keyboard and Phone Class since we inherit base class Item in them we can access all methods and vars in it in them .
+here we overided the class var pay_rate of the Item Class to our desired value in each child class . So now when we call the discount_method
+it will generate discount based on the pay_rate value in the called instance's class . Thus a single entity (discount_method) know how to
+handle its functionality according to the object i.e we can have control over the discount for different obj (using pay_rate value as our according
+for different objects) and without changing the actual functionality of discount_method, it will handle it based on the objects .
+This is how inheritance and polymorphism comes in action together .
+
+
+
+
+    
+
+    

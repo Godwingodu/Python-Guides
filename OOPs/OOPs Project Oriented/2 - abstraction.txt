@@ -1,0 +1,64 @@
+* Abstraction is the concept of only showing the necessary attributes and hides the unnecessary information .
+* Main purpose of abstraction is to hide unnecessary details from the user . 
+* Abstraction focuses on hiding the internal implementations of a process or method from the user. 
+* In this way, the user knows what he is doing but not how the work is being done.
+* Realife Ex:- We can drive a car without knowing about its internal working , ATM Machine
+
+Ex :-
+
+    If we have a method to send email in our class, basically senting a mail requires several steps 
+    such as connect smtp, create body etc . so we have to create methods for these too and use it in
+    the main method send email .
+    
+    # Without Abstraction
+    class Email:
+        def connect(self,smtp_server):
+            pass
+
+        def body(self):
+            return f"Email Body"  
+
+        def send(self):
+            pass
+
+        def send_email(self):
+            self.connect()
+            self.body()
+            self.send()
+        
+    These methods which are part in sending email are only going to be called from the main method send_email() .
+    coz they are only part of email sending process, whuch is a larger process that we divided in to these processess.
+
+    Now, when we create a object for this class and to send mail,
+     ---------------------
+    | obj = Email()       |   
+    | obj.connect() *     | 
+    | obj.body() *        |
+    | obj.send_email() ** |
+     ---------------------
+     As we see, we can access the methods that are part of the email sending process, along with the main method (send_email)
+     for sending mail directly. Here is there need to show these unnecessary methods that are part in email sending ? while we 
+     have implemented them in the main method (send_email()) ? - The answer is NO . 
+     There is no need to show this unnecessary implementations while they are already present in main method . This is where role of
+     Abstraction comes . We can hide these unnecessary methods from the instance calling or at obj creation using abstraction .
+     To implement that we use access modifiers as in encapuslation but here not to variables but to these methods . Using private, protected ...
+     Here use __ (private) , _ protected before the name of these methods as prefix so that we can hide them from instance calling and 
+     achieve abstraction . In other languages we use name private , protected , public here we specify access specifiers using _ , __ etc.
+    
+    # With Abstraction
+        class Email:
+        def __connect(self,smtp_server):
+            pass
+
+        def __body(self):
+            return f"Email Body"  
+
+        def __send(self):
+            pass
+
+        def send_email(self):
+            self.__connect()
+            self.__body()
+            self.__send()
+
+    Now only the main method send_email will be accessible at instance calling and other methods that are part of it will remain hided .
