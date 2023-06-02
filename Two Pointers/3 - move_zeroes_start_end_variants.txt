@@ -1,0 +1,34 @@
+This sort of problem can be solved using 2 approaches => 1 - 'Lumutos Partition' and 2 - 'Hoare's Partition' .
+Lumutos Partition's problems can be solved using Hoare's Partition .
+Both approaches are good so one can choose between .
+
+Possible Variants :-
+
+1. Move Odd or Even numbers
+    arr[i] % 2 == 0  => even
+    arr[i] % 2 != 0  => odd
+
+2. Move all numbers less than a particular number K
+    arr[i] < K 
+
+3. Sort an array of 0's and 1's
+    arr[i] == 0      => ascending sort
+    arr[i] == 1      => descending sort
+
+4. Move negative or positive numbers
+    arr[i] < 0       => negative number
+    arr[i] >= 0      => positive number
+
+5. Remove occurancies of a specfic number from array (K)
+    arr[i] != K    
+
+6. Remove duplicates from sorted array
+    arr[i] != arr[i+1]  
+                     => After sorting array if there is duplicate elements they will be adjacent to each other .
+                        in that case we use this logic it will remove duplicates the 1st duplicated ele will be removed
+                        and the second one of the same remains
+
+
+
+
+

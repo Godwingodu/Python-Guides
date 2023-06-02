@@ -1,0 +1,31 @@
+-- Two Pointers --
+
+Here 'pointer' means variables
+Basically 2 pointers (2 variables), traverse the array from start to end | end to start | both ends
+
+-- 3 Types --
+Here, i -> used to traverse through the array
+      x -> used to indicate where to place zero next
+1. Traverse from start
+    _________________
+   |  |  |  |  |  |  | 
+   |__|__|__|__|__|__| 
+   ^ ^
+   | |  ------------ >  start - end
+   x i 
+      
+2. Traverse from end
+    _________________
+   |  |  |  |  |  |  | 
+   |__|__|__|__|__|__| 
+                   ^ ^
+   < ------------  | |  end - start
+                   x i 
+
+3. Traverse from both-ends
+    _________________
+   |  |  |  |  |  |  | 
+   |__|__|__|__|__|__| 
+   ^                 ^
+   | -- >       < -- |  both ends
+   x                 i 
