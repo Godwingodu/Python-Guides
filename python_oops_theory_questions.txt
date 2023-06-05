@@ -1,0 +1,178 @@
+## Python OOPs Theory Based Questions ##
+
+1. What is self ? (most asked)
+   Self is used to represent the instance of the class. With this keyword, you can access the attributes and methods of the class in python.
+   Using self is crucial for accessing and manipulating the instance-specific data and behaviors of a class. It helps differentiate between 
+   instance variables and local variables within the methods of a class. It is used as 1st parameter in class methods.
+
+
+2. What is the __init__ method? (most asked)
+   __init__ is a contructor method in Python and is automatically called to allocate memory when a new object/instance is created. All classes
+   have a __init__ method associated with them. The method is run as soon as an object is instantiated. It helps in distinguishing methods and 
+   attributes of a class from local variables.
+
+
+3. What is the__new__ method?
+   The __new__ method is a special method in Python that is responsible for creating and returning a new instance of a class. 
+   It is called before the __init__ method and is primarily used when you need to customize the creation process of an object.
+   Unlike the __init__ method, which is responsible for initializing the object's state, the __new__ method is responsible for 
+   creating and returning the instance itself.
+
+
+4. What is the static method?
+   Static method is a method that belongs to a class rather than an instance of the class. It is defined using the @staticmethod decorator 
+   and does not have access to the instance or class attributes. Unlike regular methods, static methods do not receive the self or cls parameter
+   automatically. Static methods can be called on the class itself or on an instance of the class. Static methods are primarily used for utility 
+   functions or operations that are related to the class but do not require access to instance-specific data. It cant modify the contents in class .
+
+
+5. What is the class method?
+   A class method is defined using the @classmethod decorator and receives the cls parameter as the first parameter. It operates on the class
+   itself rather than instances. Class methods have access to class-level attributes and can modify them. They can also access static methods and 
+   static attributes within the class. It cant modify the contents in class by altering class variables.
+
+
+6. Difference between the static method and the class method?
+   Static methods are self-contained and independent of instances or classes, while class methods operate on the class itself and have access to 
+   class-level attributes. Static methods are useful for utility functions, while class methods are often used for methods that involve class-level
+   data manipulation.
+
+
+7. Difference between a method and a function?
+   A method is a function that is defined within a class and is associated with instances of that class. Methods are accessed through an instance 
+   of the class.
+   A function is a self-contained block of code that performs a specific task. Functions can be defined outside of a class and can be called 
+   independently.
+
+
+8. What is an abstract class? (most asked)
+   An abstract class is a class that cannot be instantiated and is meant to serve as a blueprint for other classes. It provides a common interface
+   and defines abstract methods that must be implemented by its subclasses. An abstract class cannot be instantiated directly, but it can be used 
+   as a base class for other classes to inherit from. An abstract class is created using the abc module in Python, specifically the ABC class and 
+   the abstractmethod decorator. 
+
+
+9. Can we instantiate an Abstract class?
+   No, you cannot instantiate an abstract class directly in Python. An abstract class is meant to be a blueprint for other classes, 
+   and it is designed to be subclassed. The purpose of an abstract class is to provide a common structure, behavior, or interface that
+   its subclasses should follow.
+
+
+10. What is an abstract method?
+   An abstract method is a method defined in an abstract class that does not have an implementation or a body. An abstract method is declared
+   in an abstract class using the @abstractmethod decorator.It should be explicitly implemented in the class that is inheriting the abstract class.
+
+
+11. What is MRO in Python?
+   MRO stands for Method Resolution Order in Python. It defines the order in which the base classes are searched for a method or attribute 
+   during inheritance and method resolution. 
+   eg:-
+   class A:
+    def foo(self):
+        print("A's foo")
+
+    class B(A):
+        def foo(self):
+            print("B's foo")
+
+    class C(A):
+        def foo(self):
+            print("C's foo")
+
+    class D(B, C):
+        pass
+
+    obj = D()
+    obj.foo()  # Output: B's foo
+
+    When obj.foo() is called, Python follows the MRO to determine the method resolution order. By Default it Follows Left-to-Right Ordering.
+
+
+12. How will you check if a class is a child of another class?
+   This is done by using a method called issubclass() provided by python. The method tells us if any class is a child of another class by
+   returning true or false accordingly.
+   eg:- 
+    class Parent(object):
+        pass   
+ 
+    class Child(Parent):
+        pass   
+
+    # Driver Code
+    print(issubclass(Child, Parent))    #True
+    print(issubclass(Parent, Child))    #False
+
+    * We can check if an object is an instance of a class by making use of isinstance() method:
+    eg:-
+     obj1 = Child()
+     obj2 = Parent()
+
+     print(isinstance(obj2, Child))    #False 
+     print(isinstance(obj2, Parent))   #True 
+
+
+13. What are the inheritances in Python? (most asked)
+   In inheritance, the child class acquires the properties and can access all the data members and functions defined in the parent class.
+   It provides the reusability of a code. We don’t have to write the same code again and again. Also, it allows us to add more 
+   features to a class without modifying it.
+   1 - Single Inheritance - Single inheritance is the simplest form of inheritance where a class inherits from a single base class.
+   2 - Multiple Inheritance - Multiple inheritance allows a class to inherit from multiple base classes.
+   3 - Multilevel Inheritance - Multilevel inheritance involves inheriting from a derived class, which itself is derived from another class.
+   4 - Hierarchical Inheritance - Hierarchical inheritance involves multiple classes inheriting from a single base class.
+
+
+14. What is overloading in Python or Operator Overloading?
+   Operator overloading, also known as method overloading, is a feature in Python that allows operators to perform different operations based 
+   on the operands they are applied to. It enables a class to define the behavior of operators such as +, -, *, /, etc., for its instances.
+
+   In Python, operator overloading is achieved by defining special methods in a class that are invoked when certain operators are used with objects
+   of that class. These special methods are also known as magic methods or dunder methods (short for double underscores).
+
+   Here are some commonly used magic methods for operator overloading :
+
+        __add__(self, other): Called for the + operator.
+        __sub__(self, other): Called for the - operator.
+        __mul__(self, other): Called for the * operator.
+        __div__(self, other): Called for the / operator.
+        __eq__(self, other): Called for the == operator.
+        __lt__(self, other): Called for the < operator.
+        __gt__(self, other): Called for the > operator.
+
+   By implementing these magic methods in a class, you can define how the objects of that class should behave when the corresponding operators
+   are used with them. This allows you to customize the behavior of operators according to your class's requirements.
+
+
+15. What is super() method in python?
+   In Python, the super() method is a built-in function that allows you to call a method or access an attribute from the parent class within a 
+   subclass during inheritance. It provides a convenient way to invoke the methods and constructors of the superclass or parent class.
+
+
+16. Can we modify an object attribute?
+   Yes, you can modify an object's attribute in Python. Python allows you to change the value of an object's attribute after it has been created.
+   To modify an object's attribute, you can simply assign a new value to the attribute using the dot notation (object.attribute = new_value). 
+
+
+17. What is the difference between a class attribute and an object attribute?
+   Class Attribute: A class attribute is defined within the class body, outside of any methods. 
+   It is shared by all instances of the class. They can be accessed using the class name or any instance of the class.
+
+   Object Attribute: An object attribute is defined within the methods or the __init__ method of a class. 
+   It belongs to individual instances (objects) of the class and is accessed using the object name.   
+
+
+18. What is the difference between the shallow and the deep copy? (most asked)
+   A shallow copy creates a new object that references the original elements with same memory locations as the original object, 
+   Changes made to the original object may be reflected in the shallow copy.
+
+   A deep copy creates a new object with its own set of elements that is completely independent of the original object & with its own memory space.
+   Changes made to the original object are not reflected in the deep copy.
+
+   Syntax:- import copy  
+            copy.copy(list)        # shallow copy
+            copy.deepcopy(list)    # deep copy
+
+
+19. What is a garbage collector in Python?
+   In Python, the garbage collector is a built-in mechanism that automatically manages the memory by reclaiming the memory occupied by objects 
+   that are no longer in use. It helps in freeing up memory resources and preventing memory leaks.
+   

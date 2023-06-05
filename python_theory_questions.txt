@@ -1,0 +1,319 @@
+## Python Theory Based Questions ##
+
+1. Python is Programming or Scripting Language?
+   Python is a versatile programming language that can be used for both scripting and general-purpose programming.
+   It is also an interpreted, object-oriented, and high-level programming language.
+
+
+2. How Python is an interpreted language?
+   Python is often referred to as an interpreted language because it executes code directly without the need for a separate compilation step. 
+   When you run a Python program, the Python interpreter reads the source code line by line and translates it into machine-readable instructions 
+   on the fly, executing them immediately.
+
+
+3. What is PEP8?
+   PEP 8 is a style guide for Python code, officially titled "Python Enhancement Proposal 8." PEP 8 provides guidelines and recommendations on how 
+   to format Python code to enhance readability and maintain consistency across projects.
+
+
+4. What are the features of Python?
+   * Simple and Readable Syntax: Python has a clean and easy-to-read syntax, which makes it beginner-friendly and enhances code readability. It 
+    emphasizes code readability with the use of indentation instead of curly braces or keywords.
+
+   * Dynamic Typing: Python is dynamically typed, meaning you don't need to declare variable types explicitly. You can assign different data types 
+    to variables dynamically during runtime.
+
+   * Interpreted and Interactive: Python is an interpreted language, allowing you to execute code directly without the need for compilation. It also 
+    supports interactive mode, where you can execute code interactively line by line, making it great for prototyping, testing, and learning.
+
+   * Object-Oriented Programming (OOP): Python supports object-oriented programming concepts, including classes, objects, inheritance, and polymorphism. 
+    It enables developers to write modular and reusable code.
+
+   * Comprehensive Standard Library: Python comes with an extensive standard library that provides a wide range of modules and packages .
+
+   * Third-Party Libraries and Frameworks: Python has a vast ecosystem of third-party libraries and frameworks that extend its capabilities. 
+
+   * Cross-Platform Compatibility: Python runs on various operating systems, including Windows, macOS, Linux, and others. This allows code written
+    in Python to be easily portable and executed on different platforms without major modifications.
+
+
+5. What is the virtual environment?
+   A virtual environment in Python is a self-contained directory that contains a specific Python installation and its associated packages. 
+   A virtual environment is a tool that helps to keep dependencies required by different projects separate by creating isolated python virtual 
+   environments for them.
+
+
+6. How memory manage in Python?
+   Memory management in Python is handled by the Python Memory Manager. The memory allocated by the manager is in form of a private heap space 
+   dedicated to Python. All Python objects are stored in this heap and being private, it is inaccessible to the programmer. Additionally, 
+   Python has an in-built garbage collection to recycle the unused memory for the private heap space.
+
+
+7. What is the dynamic type casting in Python?
+   Type Casting is the method to convert the Python variable datatype into a certain data type in order to the operation required to be performed 
+   by users. 
+    1 - Implicit Type Convertion
+       Python converts the datatype into another datatype automatically (during run time).
+    2 - Explicit Type Convertion
+       Python needs user involvement to convert the variable data type into a certain data type in order to the operation required. 
+       eg:- int(),float(),list() etc.
+
+
+8. What is namespace in Python?
+   In Python, a namespace is a system that organizes and keeps track of names (identifiers) used in a program. It is a mapping between the names 
+   and the objects they refer to. Namespaces provide a way to avoid naming conflicts and provide a logical structure for accessing variables, 
+   functions, classes, and other objects within a program.
+
+   Python uses several types of namespaces, including:
+   Global Namespace: The global namespace contains names defined at the top level of a module or script. These names are accessible throughout the module or script.
+   Local Namespace: The local namespace is created when a function or method is called and exists only within that function or method. 
+   Built-in Namespace: The built-in namespace contains the names of Python's built-in functions, types, and exceptions. 
+   These names are available without the need for any import statements and are part of the Python language itself.
+
+
+9. Is Python case sensitive?
+   Yes, Python is case-sensitive. This means that Python distinguishes between lowercase and uppercase letters in variable names, function names, 
+   class names, and other identifiers.
+
+
+10. What is the is operator?
+   In Python, the is operator is used to test if two variables refer to the same object in memory. It checks if the memory address of two objects 
+   is the same, indicating that they are the exact same object.
+   eg:-
+   x = [1, 2, 3]
+   y = x  # Both x and y refer to the same list object
+   z = [1, 2, 3]
+
+   print(x is y)  # Output: True, x and y refer to the same object
+   print(x is z)  # Output: False, x and z refer to different objects
+
+
+11. What is None in Python?
+   None is a special object that represents the absence of a value or a null value. It is a built-in constant and a unique object of the 
+   NoneType type.
+
+
+12. What is pass in Python?
+   `pass` is a placeholder statement that does nothing. It is used when a statement is syntactically required but you don't want any code to be 
+   executed in that block. It serves as a "do-nothing" or empty statement.
+
+
+13. What is the lambda function?
+   It is a small, anonymous function that is defined without a formal name. It is a way to create simple, one-line functions without explicitly
+   defining a function using the def keyword.
+   syntax => lambda arguments: expression
+   eg     => double = lambda x: x * 2
+             print(double(5))  # Output: 10
+
+
+14. What is an iterator? (most asked)
+   An iterator in Python is an object that implements the iterator protocol, which consists of the __iter__() and __next__() methods. Iterators are 
+   used to iterate over a sequence of elements, such as lists, tuples, or custom objects, by providing a way to access each element one at a time.
+   eg:-
+   my_list = [1, 2, 3, 4, 5]
+
+   # Create an iterator
+   my_iterator = iter(my_list)
+
+   # Access elements using next()
+   print(next(my_iterator))  # Output: 1
+   print(next(my_iterator))  # Output: 2
+
+
+15. What is a generator in Python? (most asked)
+   In Python, a generator is a special type of iterator that generates values on-the-fly, as they are requested. It allows you to iterate over a 
+   sequence of values without storing them in memory all at once. Generators are defined using a function that includes the yield keyword instead 
+   of return.
+   eg:-
+   def number_generator(n):
+    for i in range(n):
+        yield i
+
+   # Using the generator
+   my_generator = number_generator(5)
+
+   print(next(my_generator))  # Output: 0
+   print(next(my_generator))  # Output: 1
+
+
+16. What is the difference between a Python iterator and a generator? (most asked)
+   Iterators are a more general concept in Python that allow you to iterate over a sequence of values. Generators, on the other hand, are a 
+   specific type of iterator that generates values on-the-fly using the yield keyword and are particularly useful for memory-efficient 
+   generation of sequences. All generators are iterators, but not all iterators are generators.
+
+
+17. What is a decorator in Python? (most asked)
+   Decorators in Python are essentially functions that add functionality or allows you to modify the behavior of a function or a class without 
+   directly changing its source code. They are represented as @decorator_name above the function name .
+
+
+18. What are the data types in Python?
+   * Numeric Types:
+    int: Represents integer values, such as 1, 2, -5, etc.
+    float: Represents floating-point or decimal numbers with fractional parts, such as 3.14, -2.5, etc.
+    complex: Represents complex numbers with real and imaginary parts, such as 2+3j, -1-4j, etc.
+
+   * Sequence Types:
+    str: Represents strings of characters, such as "Hello", 'Python', etc.
+    list: Represents ordered, mutable sequences of elements, enclosed in square brackets, such as [1, 2, 3], ['apple', 'banana'], etc.
+    tuple: Represents ordered, immutable sequences of elements, enclosed in parentheses, such as (1, 2, 3), ('a', 'b', 'c'), etc.
+
+   * Mapping Type:
+    dict: Represents key-value pairs, enclosed in curly braces, such as {'name': 'John', 'age': 25}, {'apple': 3, 'banana': 5}, etc.
+
+   * Set Types:
+    set: Represents an unordered collection of unique elements, enclosed in curly braces, such as {1, 2, 3}, {'apple', 'banana'}, etc.
+    frozenset: Represents an immutable version of set, enclosed in parentheses, such as frozenset({1, 2, 3}), frozenset({'apple', 'banana'}), etc.
+   
+   * Boolean Type:
+    bool: Represents boolean values, either True or False, used for logical operations and comparisons.
+
+   * None Type:
+    None: Represents the absence of a value or null.
+
+
+19. What is a List?
+   Lists [] are used to store multiple items in a single variable. List items are ordered, changeable, and allow duplicate values.
+   List items are indexed.
+
+
+20. What is a Tuple?
+   Tuples () are used to store multiple items in a single variable. Tuple items are ordered, unchangeable, and allow duplicate values.
+   Tuple items are indexed.
+
+
+21. Difference between a list and a tuple? (most asked)
+   The key difference between lists and tuples is mutability. Lists are mutable and allow modifications, while tuples are immutable and 
+   their elements cannot be changed once defined. Lists consume more memory than Tuples. Lists have several built-in methods while Tuple
+   doesn't. Tuples are faster than Lists.
+
+
+22. What is list comprehension? (most asked)
+   List comprehension is a concise and powerful syntax in Python that allows you to create new lists by iterating over an existing iterable object,
+   applying transformations or filtering conditions, all in a single line of code. It provides a more compact and expressive way to create lists 
+   compared to traditional loops.
+   syntax => new_list = [expression for iterator_variable in iterable]
+   eg     => numbers = [1, 2, 3, 4, 5]
+             squared_numbers = [num**2 for num in numbers]
+
+
+23. What is dictionary comprehension?
+   Dictionary comprehension is a concise and efficient way to create dictionaries in Python by iterating over an iterable and defining
+   key-value pairs based on certain conditions or transformations, all in a single line of code. It follows a similar syntax to list comprehension 
+   but generates dictionaries instead.
+   syntax => new_dict = {key_expression: value_expression for iterator_variable in iterable}
+   eg     => numbers = [1, 2, 3, 4, 5]
+             squared_dict = {num: num**2 for num in numbers}
+
+
+24. What is the difference between a sequence and a list?
+   A sequence is a general term for an ordered collection of elements, while a list is a specific type of sequence that is mutable. 
+   Sequences can be either mutable or immutable, depending on the specific type. Lists are created using square brackets [], while 
+   sequences have a more general syntax.
+   Sequences are used for representing ordered collections, while lists are commonly used when a mutable, ordered collection is required.
+
+
+25. Does string in Python represent a list?
+   No, a string in Python does not represent a list. Although both strings and lists are sequences in Python, they are distinct types with 
+   different characteristics.
+   A string represents a sequence of characters, where each character in the string is identified by its position or index. Strings are immutable .
+   A list in Python represents an ordered collection of elements. Unlike strings, lists are mutable .
+
+
+26. Is string a mutable object? (most asked)
+   No, strings are immutable objects in Python, meaning their contents cannot be changed once they are created. When you perform operations that 
+   appear to modify a string, such as concatenation or replacing characters, what actually happens is the creation of a new string with the desired
+   modifications, rather than modifying the original string in-place.
+   eg :-
+   my_string = "Hello"
+   modified_string = my_string + ", World!"  # Concatenation creates a new string
+   print(my_string)  # Output: "Hello"
+   print(modified_string)  # Output: "Hello, World!"
+
+
+27. Which one is better list or tuple and why? (most asked)
+   Use lists when you need a mutable collection with dynamic size and when you anticipate the need to modify the elements.Lists are well-suited 
+   for scenarios that involve adding, removing, or changing elements frequently. 
+   Use tuples when you have a fixed collection of elements that should remain unchanged to ensure immutability and memory efficiency. 
+
+
+28. What is a module in Python? (most asked)  
+   In Python, a module is a file containing Python code that defines functions, classes, and variables that can be used in other Python programs. 
+   It is a way to organize and reuse code by separating related functionality into separate files.
+   
+
+29. What is a package in Python?
+   In Python, a package is a way to organize related modules into a hierarchical directory structure. It provides a mechanism for organizing code 
+   in a meaningful and modular way. A package can contain multiple modules, sub-packages, and other resources. They are commonly used to create 
+   reusable libraries, frameworks . Every package directory must contain an __init__.py file. 
+   
+
+30. What is __name__?
+   Python has a built-in variable called __name__ that records the name of the currently running module or script. The __name__ variable merely 
+   holds the name of the module or script unless the current module is executing, in which case the value __main__ is set to it.
+   
+   If the source file is executed as the main program, the interpreter sets the __name__ variable to have a value “__main__”. 
+   If this file is being imported from another module, __name__ will be set to the module’s name. 
+
+
+31. What is a set?
+   In Python, a set is an unordered collection of unique elements. It is a built-in data type that provides a way to store multiple items, 
+   ensuring that each item appears only once in the set. Sets are mutable, meaning you can add or remove elements from them.
+
+
+32. What is the difference between a set and a frozen set?
+   The main difference between a set and a frozen set in Python is that a set is mutable, meaning you can add, remove, or modify its elements, 
+   whereas a frozen set is immutable, and its elements cannot be changed after creation.  
+   eg:- 
+   my_set = {1, 2, 3}  # Creating a set , enclosed in curly braces
+   my_frozen_set = frozenset({4, 5, 6})  # Creating a frozen set , enclosed in parentheses
+
+
+33. What does *args and **kwargs mean?
+   If you want to pass a sequence of values (like a list or tuple) as arguments, you would use *args. The *args parameter collects all
+   the positional arguments passed to the function into a tuple.
+
+   If you want to pass a dictionary as an argument to a function, you would typically use **kwargs. The **kwargs parameter collects all
+   the keyword (key,value) arguments passed to the function into a dictionary.
+
+   The asterisks (* and **) indicate the unpacking of arguments, They are particularly useful when you don't know in advance how many 
+   arguments will be passed to the function .
+   eg:-
+        def my_function(*args):                          |              def my_function(**kwargs):
+            for arg in args:                             |                  for key, value in kwargs.items():
+                print(arg)                               |                      print(f"{key}: {value}")
+                                                         |
+        my_function('apple', 'banana', 'orange')         |              my_function(name='John', age=30, city='New York')
+
+
+34. What is Scope in Python?
+   In Python, scope refers to the visibility and accessibility of variables, functions, and objects in a particular part of a program. 
+   It defines the region or context in which a name (variable, function, or object) can be referenced. A scope is a block of code where an object 
+   in Python remains relevant.
+   1. Local Scope :
+      Local scope refers to the variables defined within a function.
+      Variables created inside a function are only accessible within that function and are known as local variables.
+   2. Global Scope :
+      Global scope refers to the variables defined outside of any function or class, at the top-level of a module.
+      Global variables can be accessed from anywhere within the module, including all functions and classes defined in the module.
+   3. Nonlocal Scope :
+      Enclosing scope, also known as nonlocal scope, is a scope that exists for nested functions.
+      It refers to the variables defined in the immediate enclosing function (global for sub functions).
+   4. Built-in Scope :
+      Built-in scope refers to the pre-defined names provided by Python, which are available globally.
+      It includes built-in functions (e.g., print(), len()), built-in types (e.g., int, list, str), and other built-in objects and exceptions.
+
+
+35. What are Access Modifiers in Python?
+   Access modifiers are used by object oriented programming languages like C++,java,python etc. to restrict the access of the class 
+   member variable and methods from outside the class.
+   1. Public :
+      By default the member variables and methods are public which means they can be accessed from anywhere outside or inside the class. 
+      No public keyword is required to make the class or methods and properties public.
+   2. Protected :
+      Protected attributes are attributes defined with an underscore prefixed to their identifier eg. _sara. Class properties and methods with
+      protected access modifier can be accessed within the class and from the class that inherits the protected class. They can still be accessed 
+      and modified from outside the class they are defined in but a responsible developer should refrain from doing so.
+   3. Private :
+      Class properties and methods with private access modifier can only be accessed within the class where they are defined and cannot be accessed
+      outside the class. In Python private properties and methods are declared by adding a prefix with two underscores(‘__’) before their declaration.
