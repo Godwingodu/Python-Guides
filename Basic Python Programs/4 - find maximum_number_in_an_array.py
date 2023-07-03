@@ -12,3 +12,12 @@ limit = int(input())
 array = [int(input()) for i in range(limit)]
 
 max_of_array(array)
+
+
+list = [1,2,3,4,5,100]
+max = float('-inf')
+for i in list:
+    if i >= max:
+        max = i
+
+print(max)

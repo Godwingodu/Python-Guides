@@ -55,3 +55,17 @@ a.upper()
 a.capitalize()
 a.startswith()
 a.endswith()
+
+
+'''
+Strings cannot be sorted using .sort() method like lists, for sorting string directly use sorted('string_name') method instead .
+
+or
+
+my_str = "Hello this Is an Example With cased letters"
+words = [word.lower() for word in my_str.split()]        # String to list
+words.sort()
+new_str = ' '.join(words)                                # List back to String
+print(my_str)
+print(new_str)
+'''

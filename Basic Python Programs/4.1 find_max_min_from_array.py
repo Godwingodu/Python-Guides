@@ -17,3 +17,18 @@ limit = int(input())
 array = [int(input()) for i in range(limit)]
 
 max_min(array)
+
+################################################
+list = [2,3,4,5,100,1000,0]
+max = float('-inf')
+min = float('inf')
+
+for i in list:
+    if i >= max:
+        max = i
+    
+    if i <= min:
+        min = i
+
+print(min)
+print(max)

@@ -121,3 +121,9 @@ A = [1, 2, 3]
 B = [4, 5, 6]
 A.extend(B)
 print(A)          # O/P => [1, 2, 3, 4, 5, 6]
+
+# Randomly choose a element from list
+import random
+
+my_list = [1, 'a', 32, 'c', 'd', 31]
+print(random.choice(my_list))
